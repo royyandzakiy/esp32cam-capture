@@ -8,6 +8,7 @@
 #include "soc/soc.h"
 #include "soc/rtc_cntl_reg.h"
 #include "esp_camera.h"
+#include "credentials.h"
 
 #ifndef CREDENTIALS_H
   #define WIFI_SSID "..."
