@@ -1,6 +1,8 @@
 /*
- * esp32cam-photo-server by Rui Santos
-  Complete project details at https://RandomNerdTutorials.com/esp32-cam-post-image-photo-server/
+ * esp32cam-capture
+ * captures image by pressing push button, then uploads to server
+ * 
+ * Inspired from project by Rui Santos https://RandomNerdTutorials.com/esp32-cam-post-image-photo-server/
 */
 
 #include <Arduino.h>
