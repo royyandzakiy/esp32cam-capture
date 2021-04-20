@@ -18,7 +18,7 @@ ESP32-Cam       FTDI Programmer
 GND ------------- GND
 UOR ------------- TX
 UOT ------------- RX
-IO0 to GND
+IO0 to GND (for flashing mode, release if not flashing mode)
 
 ESP32-Cam       Push Button
 12 -------------- +
