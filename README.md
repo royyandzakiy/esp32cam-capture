@@ -19,6 +19,10 @@ GND ------------- GND
 UOR ------------- TX
 UOT ------------- RX
 IO0 to GND
+
+ESP32-Cam       Push Button
+12 -------------- +
+GND ------------- -
 ```
 
 - Verify & Upload
