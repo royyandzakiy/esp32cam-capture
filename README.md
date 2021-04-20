@@ -8,6 +8,8 @@ captures image by pressing push button, then uploads to server
 - open folder `esp32cam-capture`
 - create empty file `credentials.h`
 - edit `WIFI_SSID` & `WIFI_PASS` with current WiFi configurations
+- edit `serverName` by inserting target IP address or domain
+- edit `serverPath` if needed (for example if placed files in a different directory or with a different file name)
 - Connect ESP32-Cam with proper pinout connections with an FTDI or other programmer
 
 ```
@@ -23,8 +25,9 @@ IO0 to GND
 
 ### Preparing Server
 - Install xampp or other alternatives
-- Insert upload.php to `public_html` or `htdocs` or main page alternative
+- Insert `webserver/upload.php` to `public_html` or `htdocs` or main page alternative. optionally you can also insert `gallery.php`
 - Create folder `uploads` in the same location
+- start server
 
 ---
 
