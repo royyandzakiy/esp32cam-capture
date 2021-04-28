@@ -20,11 +20,11 @@
 const char* ssid = WIFI_SSID;
 const char* password = WIFI_PASS;
 
-String serverName = "192.168.43.89";   // REPLACE WITH YOUR Raspberry Pi IP ADDRESS
+String serverName = "192.168.1.6";   // REPLACE WITH YOUR Raspberry Pi IP ADDRESS
 //String serverName = "example.com";   // OR REPLACE WITH YOUR DOMAIN NAME
 
-String serverPath = "/upload.php";     // The default serverPath should be upload.php
-const int serverPort = 80;
+String serverPath = "/";     // The default serverPath should be upload.php
+const int serverPort = 5000;
 
 WiFiClient client;
 
@@ -51,7 +51,8 @@ void pin_ISR() {
 
 void button_setup() {
   pinMode(BUTTON_PIN, INPUT);
-  attachInterrupt(0, pin_ISR, CHANGE);
+  attachInterrupt(BUTTON_PIN, pin_ISR, CHANGE);
+  //attachInterrupt(digitalPinToInterrupt(BUTTON_PIN),pin_ISR,RISING);
 }
 
 //=========================================
@@ -82,12 +83,19 @@ void setup() {
   wifi_setup();
   camera_setup();
   button_setup();
+
+  Serial.println("Setup done");
 }
 
 void loop() {
   // captures every time the interrupt from button press is triggered
   if (capture) {
-    sendPhoto();
+    if (sendPhoto()) {
+      Serial.println("Photo Capture & Send Success");
+    } else {
+      Serial.println("Photo Capture & Send Fail");
+    }
     capture = false;
+    delay(2000);
   }
 }
